@@ -1,5 +1,5 @@
 /**
- * @file vihcsr04.c
+ * @file viwebserver.cpp
  * @author Ilia Voronin (www.linkedin.com/in/ilia-voronin-7a169122a)
  * @brief Source file of HC-SR04 ultrasonic distance sensor control driver (c++ realisation)
  * 

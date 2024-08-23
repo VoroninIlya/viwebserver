@@ -17,7 +17,7 @@
                 "-N",
                 "-f",
                 "root@192.168.1.105",
-                "rm /home/ilia/proj/viraspi/tst_vihcsr04.elf"
+                "rm /home/ilia/proj/viraspi/tst_viwebserver.elf"
             ],
         },
         {
@@ -26,7 +26,7 @@
             "dependsOn": "Remove executable from remote raspi",
             "command": "C:/msys64/usr/bin/scp.exe",
             "args": [
-                "${command:cmake.launchTargetDirectory}/tst_vihcsr04.elf", 
+                "${command:cmake.launchTargetDirectory}/tst_viwebserver.elf", 
                 "root@192.168.1.105:/home/ilia/proj/viraspi/"
             ],
         },
@@ -46,12 +46,12 @@
             "args":[
                 "-f", 
                 "root@192.168.1.105",
-                "chmod +x /home/ilia/proj/viraspi/tst_vihcsr04.elf;",
+                "chmod +x /home/ilia/proj/viraspi/tst_viwebserver.elf;",
                 "killall -q gdbserver;",
-                "gdbserver :5555 /home/ilia/proj/viraspi/tst_vihcsr04.elf"
+                "gdbserver :5555 /home/ilia/proj/viraspi/tst_viwebserver.elf"
                 ], //  
             "problemMatcher" : []
-            },
+        },
         { 
             "type": "cppbuild",
             "label": "C/C++: gcc.exe build active file",

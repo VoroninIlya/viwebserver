@@ -1,7 +1,7 @@
 /**
- * @file viwebserver.hpp
+ * @file vihtmllabel.hpp
  * @author Ilia Voronin (www.linkedin.com/in/ilia-voronin-7a169122a)
- * @brief Header file of web-server
+ * @brief 
  *
  * @copyright Copyright (c) 2024 Ilia Voronin
  * 
@@ -21,44 +21,18 @@
 
 #pragma once
 
-#include <stdint.h>
-#include <stddef.h>
-#include <stdbool.h>
-#include <string>
-#include <vector>
-#include <map>
-#include <climits>
+#include <vihtmlbase.hpp>
 
-namespace vivebserver {
+namespace vihtmlformatter {
 
-  typedef enum {
-    DEBUG_DISABLED = 0,  
-    DEBUG_INFO
-  } DebugLvl_t;
+struct Label : public IBaseHtmlElement {
+public:
+  Label(const std::string& forVal = "", const std::string& value = "");
+  std::string GetHtml() const override;
 
-  typedef enum {
-    ONESHOT_MEASURE = 0,  
-    CONTINUOUS_MEASURE
-  } MeasureMode_t;
+  std::string forValue{""};
+  std::string value{""};
 
-  typedef int (*Printf_t) (const char *__format, ...);
+};
 
-  class WebServer 
-  {
-  public:
-    WebServer();
-
-    void SetPrintfCb(const Printf_t printfCb);
-
-    void SetDebugLvl(const DebugLvl_t lvl);
-
-  private:
-    
-    //std::string m_s;
-    bool m_isInitialized{false};
-
-    DebugLvl_t m_debugLvl{};
-    Printf_t m_printfCb{};
-  };
 }
-

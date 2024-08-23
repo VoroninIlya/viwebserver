@@ -1,7 +1,7 @@
 /**
- * @file viwebserver.hpp
+ * @file vihtmllabel.cpp
  * @author Ilia Voronin (www.linkedin.com/in/ilia-voronin-7a169122a)
- * @brief Header file of web-server
+ * @brief 
  *
  * @copyright Copyright (c) 2024 Ilia Voronin
  * 
@@ -19,46 +19,20 @@
  * 
  */
 
-#pragma once
+#include "vihtmllabel.hpp"
 
-#include <stdint.h>
-#include <stddef.h>
-#include <stdbool.h>
-#include <string>
-#include <vector>
-#include <map>
-#include <climits>
+namespace vihtmlformatter {
 
-namespace vivebserver {
+Label::Label(const std::string& forVal, const std::string& value):
+  forValue(forVal), value(value) {
 
-  typedef enum {
-    DEBUG_DISABLED = 0,  
-    DEBUG_INFO
-  } DebugLvl_t;
-
-  typedef enum {
-    ONESHOT_MEASURE = 0,  
-    CONTINUOUS_MEASURE
-  } MeasureMode_t;
-
-  typedef int (*Printf_t) (const char *__format, ...);
-
-  class WebServer 
-  {
-  public:
-    WebServer();
-
-    void SetPrintfCb(const Printf_t printfCb);
-
-    void SetDebugLvl(const DebugLvl_t lvl);
-
-  private:
-    
-    //std::string m_s;
-    bool m_isInitialized{false};
-
-    DebugLvl_t m_debugLvl{};
-    Printf_t m_printfCb{};
-  };
 }
 
+std::string Label::GetHtml() const {
+  std::string res = "<label" + 
+    (!forValue.empty() ? (" for='" + forValue + "'" ) : "") + ">" +
+    (!value.empty() ? value : "") + "</label>";
+  return res;
+}
+
+}

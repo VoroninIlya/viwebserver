@@ -16,7 +16,6 @@ if(PROJECT_IS_TOP_LEVEL)
 # Set as executable
 add_subdirectory(${UNITY_ROOT_PATH} ${${EXECUTABLE}_BINARY_DIR}/modules/unity)
 add_subdirectory(${GTEST_ROOT_PATH} ${${EXECUTABLE}_BINARY_DIR}/modules/gtest)
-#add_subdirectory(${GMOCK_ROOT_PATH} ${${EXECUTABLE}_BINARY_DIR}/modules/gtest/googlemock)
 endif()
 
 add_executable(tst_viwebserver)
@@ -26,6 +25,8 @@ enable_testing()
 target_sources(tst_viwebserver PUBLIC
     ${CMAKE_CURRENT_LIST_DIR}/tests/main/main.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tests/tst_viwebserver.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tests/tst_vihtmllabel.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tests/tst_vihtmlinput.cpp
 )
 
 # Add key include paths
@@ -46,15 +47,18 @@ target_compile_definitions(tst_viwebserver PUBLIC
 )
 
 # Compiler options
-target_compile_options(tst_viwebserver PRIVATE
+target_compile_options(tst_viwebserver PUBLIC
     -g
     --coverage
+    -fprofile-arcs 
+    -ftest-coverage
     -Wall
     -Wextra
     -Wpedantic
 )
 
 target_link_libraries(
-  tst_viwebserver viwebserver -g -coverage -lgcov)
+  tst_viwebserver viwebserver gtest gmock -g -coverage -fprofile-arcs -ftest-coverage -lgcov -pthread)
 
-add_test(NAME VIWEBSRV_Init COMMAND tst_viwebserver "--gtest_filter=VIWEBSRV_Init.*")
+add_test(NAME Test_vihtmllabel COMMAND tst_viwebserver "--gtest_filter=Test_vihtmllabel.*")
+add_test(NAME Test_vihtmlinput COMMAND tst_viwebserver "--gtest_filter=Test_vihtmlinput.*")

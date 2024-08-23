@@ -7,7 +7,12 @@ message("Entering ${CMAKE_CURRENT_LIST_DIR}/CMakeLists.txt")
 
 # Register core library
 add_library(viwebserver INTERFACE)
-target_sources(viwebserver PUBLIC ${CMAKE_CURRENT_LIST_DIR}/src/viwebserver.cpp)
+target_sources(viwebserver PUBLIC 
+  ${CMAKE_CURRENT_LIST_DIR}/src/viwebserver.cpp
+  ${CMAKE_CURRENT_LIST_DIR}/src/vihtmlformatter.cpp
+  ${CMAKE_CURRENT_LIST_DIR}/src/vihtmllabel.cpp
+  ${CMAKE_CURRENT_LIST_DIR}/src/vihtmlinput.cpp
+)
 target_include_directories(viwebserver INTERFACE ${CMAKE_CURRENT_LIST_DIR}/src/inc)
 
 # Debug message

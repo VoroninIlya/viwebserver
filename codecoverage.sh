@@ -1,4 +1,7 @@
 #!/bin/bash
 
-lcov -t "tst_viwebserver -o tst_viwebserver.info -c -d .
-genhtml -o report tst_viwebserver.info
+./build/Win64-Debug/tst_viwebserver.exe
+
+lcov -t "tst_viwebserver" --output-file tst_viwebserver.info --derive-func-data --capture --directory ./build
+
+genhtml tst_viwebserver.info --function-coverage --branch-coverage --highlight --prefix ./report --output-directory ./report
