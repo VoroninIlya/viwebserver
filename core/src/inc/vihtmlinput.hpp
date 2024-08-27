@@ -56,7 +56,9 @@ public:
     image,
     submit,
     reset,
-    button
+    button,
+
+    SizeOfEnum
   };
 
   enum class InputMode {
@@ -67,21 +69,27 @@ public:
     tel,
     search,
     email,
-    url
+    url,
+
+    SizeOfEnum
   };
 
   enum class FormMethod {
     none = 0,
     get,
     post,
-    dialog
+    dialog,
+
+    SizeOfEnum
   };
 
   enum class TextDir {
     none = 0,
     ltr,
     rtl,
-    auto_
+    auto_,
+
+    SizeOfEnum
   };
 
   enum class StringAttributes {
@@ -100,7 +108,9 @@ public:
     style,
     title,
     form,
-    dir
+    dir,
+
+    SizeOfEnum
   };
 
   enum class NumericAttributes {
@@ -115,6 +125,8 @@ public:
     height,
     width,
     tabindex,
+
+    SizeOfEnum
   };
 
   enum class BooleanAttributes{
@@ -127,6 +139,8 @@ public:
     multiple,
     checked,
     spellcheck,
+
+    SizeOfEnum
   };
 
   enum class EventAttributes {
@@ -147,7 +161,9 @@ public:
     onmouseleave,
     ondragstart,
     ondrag,
-    ondrop
+    ondrop,
+
+    SizeOfEnum
   };
 
   Input();
@@ -166,7 +182,7 @@ public:
   static std::string EnumToStr(Input::EventAttributes enm);
 
   void SetType(Input::InputTypes type);
-  
+
   template <class T>
   void SetAttribute(const std::string& attrName, T val);
 
@@ -203,7 +219,7 @@ private:
   std::pair<const std::string, FormMethod> m_formAttr{ "form", Input::FormMethod::none };
   std::pair<const std::string, TextDir> m_dirAttr{ "dir", Input::TextDir::ltr };
   std::pair<const std::string, InputMode> m_inputModeAttr{ "inputmode", Input::InputMode::none };
-  
+
   std::string m_custom;
 };
 

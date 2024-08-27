@@ -50,7 +50,7 @@ target_compile_definitions(tst_viwebserver PUBLIC
 target_compile_options(tst_viwebserver PUBLIC
     -g
     --coverage
-    -fprofile-arcs 
+    -fprofile-arcs
     -ftest-coverage
     -Wall
     -Wextra

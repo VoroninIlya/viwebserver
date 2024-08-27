@@ -377,22 +377,7 @@ namespace vihtmlformatter {
   void Input::SetAttribute<const std::string&>(const std::string& attrName, const std::string& val) {
 
     Input::StringAttributes strAttr = StrToEnum<Input::StringAttributes>(attrName);
-    if (Input::StringAttributes::form == strAttr) {
-      auto formVal = StrToEnum<Input::FormMethod>(val);
-      if(Input::FormMethod::none != formVal)
-        return SetAttribute(formVal);
-    }
-    else if (Input::StringAttributes::dir == strAttr) {
-      auto dirVal = StrToEnum<Input::TextDir>(val);
-      if(Input::TextDir::none != dirVal)
-        return SetAttribute(dirVal);
-    }
-    else if (Input::StringAttributes::inputmode == strAttr) {
-      auto inputModeVal = StrToEnum<Input::InputMode>(val);
-      if(Input::InputMode::none != inputModeVal)
-        return SetAttribute(inputModeVal);
-    }
-    else if(Input::StringAttributes::none != strAttr)
+    if(Input::StringAttributes::none != strAttr)
       return SetAttribute(strAttr, val);
 
     Input::NumericAttributes numAttr = StrToEnum<Input::NumericAttributes>(attrName);
@@ -465,13 +450,29 @@ namespace vihtmlformatter {
     if(std::find(allowed.begin(), allowed.end(), attr) == allowed.end())
       return;
 
-    std::string key = EnumToStr(attr);
-    if(val.empty() && m_strAttr.contains(key)) {
-      m_strAttr.erase(key);
-      return;
+    if (Input::StringAttributes::form == attr) {
+      auto formVal = StrToEnum<Input::FormMethod>(val);
+      if(Input::FormMethod::none != formVal)
+        return SetAttribute(formVal);
     }
-
-    m_strAttr[key] = val;
+    else if (Input::StringAttributes::dir == attr) {
+      auto dirVal = StrToEnum<Input::TextDir>(val);
+      if(Input::TextDir::none != dirVal)
+        return SetAttribute(dirVal);
+    }
+    else if (Input::StringAttributes::inputmode == attr) {
+      auto inputModeVal = StrToEnum<Input::InputMode>(val);
+      if(Input::InputMode::none != inputModeVal)
+        return SetAttribute(inputModeVal);
+    }
+    else {
+      std::string key = EnumToStr(attr);
+      if(val.empty() && m_strAttr.contains(key)) {
+        m_strAttr.erase(key);
+        return;
+      }
+      m_strAttr[key] = val;
+    }
   } 
 
   void Input::SetAttribute(NumericAttributes attr, int32_t val) {

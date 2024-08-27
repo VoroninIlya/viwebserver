@@ -1,8 +1,6 @@
 opencppcoverage ^
 --verbose ^
---sources %~dp0core\* ^
---sources %~dp0tests\* ^
+--working_dir %~dp0build\Win64-Debug\ ^
+--sources %~dp0\* ^
 --modules %~dp0build\Win64-Debug* ^
---working_dir %~dp0 ^
---cover_children ^
 -- %~dp0build\Win64-Debug\tst_viwebserver.exe
