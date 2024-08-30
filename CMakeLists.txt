@@ -27,6 +27,7 @@ target_sources(tst_viwebserver PUBLIC
     ${CMAKE_CURRENT_LIST_DIR}/tests/tst_viwebserver.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tests/tst_vihtmllabel.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tests/tst_vihtmlinput.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tests/tst_vihtmllink.cpp
 )
 
 # Add key include paths
@@ -62,3 +63,4 @@ target_link_libraries(
 
 add_test(NAME Test_vihtmllabel COMMAND tst_viwebserver "--gtest_filter=Test_vihtmllabel.*")
 add_test(NAME Test_vihtmlinput COMMAND tst_viwebserver "--gtest_filter=Test_vihtmlinput.*")
+add_test(NAME Test_vihtmllink COMMAND tst_viwebserver "--gtest_filter=Test_vihtmllink.*")

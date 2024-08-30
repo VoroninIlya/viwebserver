@@ -541,7 +541,6 @@ namespace vihtmlformatter {
   template<>
   std::string Input::GetAttribute<std::string>(const std::string& attrName) {
     Input::StringAttributes strAttr = StrToEnum<Input::StringAttributes>(attrName);
-    
     if(Input::StringAttributes::none != strAttr)
       return GetAttribute(strAttr);
 
@@ -550,7 +549,7 @@ namespace vihtmlformatter {
       return std::to_string(GetAttribute(numAttr));
 
     Input::EventAttributes evtAttr = StrToEnum<Input::EventAttributes>(attrName);
-      if(Input::EventAttributes::none != evtAttr)
+    if(Input::EventAttributes::none != evtAttr)
       return GetAttribute(evtAttr);
 
     return "";

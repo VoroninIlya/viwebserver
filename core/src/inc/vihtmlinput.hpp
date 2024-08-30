@@ -58,7 +58,7 @@ public:
     reset,
     button,
 
-    SizeOfEnum
+    sizeofenum
   };
 
   enum class InputMode {
@@ -71,7 +71,7 @@ public:
     email,
     url,
 
-    SizeOfEnum
+    sizeofenum
   };
 
   enum class FormMethod {
@@ -80,7 +80,7 @@ public:
     post,
     dialog,
 
-    SizeOfEnum
+    sizeofenum
   };
 
   enum class TextDir {
@@ -89,7 +89,7 @@ public:
     rtl,
     auto_,
 
-    SizeOfEnum
+    sizeofenum
   };
 
   enum class StringAttributes {
@@ -110,7 +110,7 @@ public:
     form,
     dir,
 
-    SizeOfEnum
+    sizeofenum
   };
 
   enum class NumericAttributes {
@@ -126,7 +126,7 @@ public:
     width,
     tabindex,
 
-    SizeOfEnum
+    sizeofenum
   };
 
   enum class BooleanAttributes{
@@ -140,7 +140,7 @@ public:
     checked,
     spellcheck,
 
-    SizeOfEnum
+    sizeofenum
   };
 
   enum class EventAttributes {
@@ -163,7 +163,7 @@ public:
     ondrag,
     ondrop,
 
-    SizeOfEnum
+    sizeofenum
   };
 
   Input();
@@ -199,6 +199,9 @@ public:
 
   template <class T>
   T GetAttribute(const std::string&);
+
+  template <class T>
+  T GetAttribute(); // TODO
 
   std::string GetAttribute(Input::StringAttributes attr);
   int32_t GetAttribute(Input::NumericAttributes attr);

@@ -95,23 +95,23 @@ textInput.GetHtml());
 TEST_F(Test_vihtmlinput, Test_PasswordInput_GetHtml) {
   Input checkboxInput{Input::InputTypes::password};
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::sizeofenum); i++) {
     Input::StringAttributes attr = static_cast<Input::StringAttributes>(i);
     std::string attrValue = "test-" + Input::EnumToStr(attr);
     checkboxInput.SetAttribute(attr, attrValue);
   }
   
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::sizeofenum); i++) {
     Input::NumericAttributes attr = static_cast<Input::NumericAttributes>(i);
     checkboxInput.SetAttribute(Input::EnumToStr(attr), i);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::sizeofenum); i++) {
     Input::BooleanAttributes attr = static_cast<Input::BooleanAttributes>(i);
     checkboxInput.SetAttribute(attr, true);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::sizeofenum); i++) {
     Input::EventAttributes attr = static_cast<Input::EventAttributes>(i);
     std::string attrValue = "test-event-" + Input::EnumToStr(attr);
     checkboxInput.SetAttribute(attr, attrValue);
@@ -142,23 +142,23 @@ onmouseup='test-event-onmouseup'>", checkboxInput.GetHtml());
 TEST_F(Test_vihtmlinput, Test_SearchInput_GetHtml) {
   Input searchInput{Input::InputTypes::search};
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::sizeofenum); i++) {
     Input::StringAttributes attr = static_cast<Input::StringAttributes>(i);
     std::string attrValue = "test-" + Input::EnumToStr(attr);
     searchInput.SetAttribute<const std::string&>(Input::EnumToStr(attr), attrValue);
   }
   
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::sizeofenum); i++) {
     Input::NumericAttributes attr = static_cast<Input::NumericAttributes>(i);
     searchInput.SetAttribute(attr, i);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::sizeofenum); i++) {
     Input::BooleanAttributes attr = static_cast<Input::BooleanAttributes>(i);
     searchInput.SetAttribute(Input::EnumToStr(attr).c_str(), true);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::sizeofenum); i++) {
     Input::EventAttributes attr = static_cast<Input::EventAttributes>(i);
     std::string attrValue = "test-event-" + Input::EnumToStr(attr);
     searchInput.SetAttribute(attr, attrValue);
@@ -187,23 +187,23 @@ onmouseover='test-event-onmouseover' onmouseup='test-event-onmouseup'>", searchI
 TEST_F(Test_vihtmlinput, Test_EmailInput_GetHtml) {
   Input emailInput{Input::InputTypes::email};
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::sizeofenum); i++) {
     Input::StringAttributes attr = static_cast<Input::StringAttributes>(i);
     std::string attrValue = "test-" + Input::EnumToStr(attr);
     emailInput.SetAttribute<const std::string&>(Input::EnumToStr(attr), attrValue);
   }
   
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::sizeofenum); i++) {
     Input::NumericAttributes attr = static_cast<Input::NumericAttributes>(i);
     emailInput.SetAttribute<const std::string&>(Input::EnumToStr(attr), std::to_string(i));
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::sizeofenum); i++) {
     Input::BooleanAttributes attr = static_cast<Input::BooleanAttributes>(i);
     emailInput.SetAttribute(Input::EnumToStr(attr).c_str(), true);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::sizeofenum); i++) {
     Input::EventAttributes attr = static_cast<Input::EventAttributes>(i);
     std::string attrValue = "test-event-" + Input::EnumToStr(attr);
     emailInput.SetAttribute(attr, attrValue);
@@ -234,23 +234,23 @@ onmouseup='test-event-onmouseup'>", emailInput.GetHtml());
 TEST_F(Test_vihtmlinput, Test_NumberInput_GetHtml) {
   Input numberInput{Input::InputTypes::number};
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::sizeofenum); i++) {
     Input::StringAttributes attr = static_cast<Input::StringAttributes>(i);
     std::string attrValue = "test-" + Input::EnumToStr(attr);
     numberInput.SetAttribute<const std::string&>(Input::EnumToStr(attr), attrValue);
   }
   
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::sizeofenum); i++) {
     Input::NumericAttributes attr = static_cast<Input::NumericAttributes>(i);
     numberInput.SetAttribute(attr, i);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::sizeofenum); i++) {
     Input::BooleanAttributes attr = static_cast<Input::BooleanAttributes>(i);
     numberInput.SetAttribute(Input::EnumToStr(attr).c_str(), true);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::sizeofenum); i++) {
     Input::EventAttributes attr = static_cast<Input::EventAttributes>(i);
     std::string attrValue = "test-event-" + Input::EnumToStr(attr);
     numberInput.SetAttribute(attr, attrValue);
@@ -279,23 +279,23 @@ onmouseup='test-event-onmouseup'>", numberInput.GetHtml());
 TEST_F(Test_vihtmlinput, Test_RangeInput_GetHtml) {
   Input rangeInput{Input::InputTypes::range};
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::sizeofenum); i++) {
     Input::StringAttributes attr = static_cast<Input::StringAttributes>(i);
     std::string attrValue = "test-" + Input::EnumToStr(attr);
     rangeInput.SetAttribute<const std::string&>(Input::EnumToStr(attr), attrValue);
   }
   
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::sizeofenum); i++) {
     Input::NumericAttributes attr = static_cast<Input::NumericAttributes>(i);
     rangeInput.SetAttribute(attr, i);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::sizeofenum); i++) {
     Input::BooleanAttributes attr = static_cast<Input::BooleanAttributes>(i);
     rangeInput.SetAttribute(Input::EnumToStr(attr).c_str(), true);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::sizeofenum); i++) {
     Input::EventAttributes attr = static_cast<Input::EventAttributes>(i);
     std::string attrValue = "test-event-" + Input::EnumToStr(attr);
     rangeInput.SetAttribute(attr, attrValue);
@@ -356,23 +356,23 @@ TEST_F(Test_vihtmlinput, Test_CheckboxInput_GetHtml)
 TEST_F(Test_vihtmlinput, Test_RadioInput_GetHtml) {
   Input radioInput{Input::InputTypes::radio};
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::sizeofenum); i++) {
     Input::StringAttributes attr = static_cast<Input::StringAttributes>(i);
     std::string attrValue = "test-" + Input::EnumToStr(attr);
     radioInput.SetAttribute<const std::string&>(Input::EnumToStr(attr), attrValue);
   }
   
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::sizeofenum); i++) {
     Input::NumericAttributes attr = static_cast<Input::NumericAttributes>(i);
     radioInput.SetAttribute(attr, i);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::sizeofenum); i++) {
     Input::BooleanAttributes attr = static_cast<Input::BooleanAttributes>(i);
     radioInput.SetAttribute(Input::EnumToStr(attr).c_str(), true);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::sizeofenum); i++) {
     Input::EventAttributes attr = static_cast<Input::EventAttributes>(i);
     std::string attrValue = "test-event-" + Input::EnumToStr(attr);
     radioInput.SetAttribute(attr, attrValue);
@@ -400,23 +400,23 @@ onmouseup='test-event-onmouseup'>", radioInput.GetHtml());
 TEST_F(Test_vihtmlinput, Test_DateInput_GetHtml) {
   Input dateInput{Input::InputTypes::date};
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::sizeofenum); i++) {
     Input::StringAttributes attr = static_cast<Input::StringAttributes>(i);
     std::string attrValue = "test-" + Input::EnumToStr(attr);
     dateInput.SetAttribute<const std::string&>(Input::EnumToStr(attr), attrValue);
   }
   
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::sizeofenum); i++) {
     Input::NumericAttributes attr = static_cast<Input::NumericAttributes>(i);
     dateInput.SetAttribute(attr, i);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::sizeofenum); i++) {
     Input::BooleanAttributes attr = static_cast<Input::BooleanAttributes>(i);
     dateInput.SetAttribute(Input::EnumToStr(attr).c_str(), true);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::sizeofenum); i++) {
     Input::EventAttributes attr = static_cast<Input::EventAttributes>(i);
     std::string attrValue = "test-event-" + Input::EnumToStr(attr);
     dateInput.SetAttribute(attr, attrValue);
@@ -444,23 +444,23 @@ onmouseover='test-event-onmouseover' onmouseup='test-event-onmouseup'>", dateInp
 TEST_F(Test_vihtmlinput, Test_ColorInput_GetHtml) {
   Input colorInput{Input::InputTypes::color};
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::sizeofenum); i++) {
     Input::StringAttributes attr = static_cast<Input::StringAttributes>(i);
     std::string attrValue = "test-" + Input::EnumToStr(attr);
     colorInput.SetAttribute<const std::string&>(Input::EnumToStr(attr), attrValue);
   }
   
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::sizeofenum); i++) {
     Input::NumericAttributes attr = static_cast<Input::NumericAttributes>(i);
     colorInput.SetAttribute(attr, i);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::sizeofenum); i++) {
     Input::BooleanAttributes attr = static_cast<Input::BooleanAttributes>(i);
     colorInput.SetAttribute(Input::EnumToStr(attr).c_str(), true);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::sizeofenum); i++) {
     Input::EventAttributes attr = static_cast<Input::EventAttributes>(i);
     std::string attrValue = "test-event-" + Input::EnumToStr(attr);
     colorInput.SetAttribute(attr, attrValue);
@@ -488,23 +488,23 @@ onmouseup='test-event-onmouseup'>", colorInput.GetHtml());
 TEST_F(Test_vihtmlinput, Test_FileInput_GetHtml) {
   Input fileInput{Input::InputTypes::file};
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::sizeofenum); i++) {
     Input::StringAttributes attr = static_cast<Input::StringAttributes>(i);
     std::string attrValue = "test-" + Input::EnumToStr(attr);
     fileInput.SetAttribute<const std::string&>(Input::EnumToStr(attr), attrValue);
   }
   
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::sizeofenum); i++) {
     Input::NumericAttributes attr = static_cast<Input::NumericAttributes>(i);
     fileInput.SetAttribute(attr, i);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::sizeofenum); i++) {
     Input::BooleanAttributes attr = static_cast<Input::BooleanAttributes>(i);
     fileInput.SetAttribute(Input::EnumToStr(attr).c_str(), true);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::sizeofenum); i++) {
     Input::EventAttributes attr = static_cast<Input::EventAttributes>(i);
     std::string attrValue = "test-event-" + Input::EnumToStr(attr);
     fileInput.SetAttribute(attr, attrValue);
@@ -525,23 +525,23 @@ disabled multiple>", fileInput.GetHtml());
 TEST_F(Test_vihtmlinput, Test_DatetimelocalInput_GetHtml) {
   Input datetimelocalInput{Input::InputTypes::datetimelocal};
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::sizeofenum); i++) {
     Input::StringAttributes attr = static_cast<Input::StringAttributes>(i);
     std::string attrValue = "test-" + Input::EnumToStr(attr);
     datetimelocalInput.SetAttribute<const std::string&>(Input::EnumToStr(attr), attrValue);
   }
   
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::sizeofenum); i++) {
     Input::NumericAttributes attr = static_cast<Input::NumericAttributes>(i);
     datetimelocalInput.SetAttribute(attr, i);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::sizeofenum); i++) {
     Input::BooleanAttributes attr = static_cast<Input::BooleanAttributes>(i);
     datetimelocalInput.SetAttribute(Input::EnumToStr(attr).c_str(), true);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::sizeofenum); i++) {
     Input::EventAttributes attr = static_cast<Input::EventAttributes>(i);
     std::string attrValue = "test-event-" + Input::EnumToStr(attr);
     datetimelocalInput.SetAttribute(attr, attrValue);
@@ -570,23 +570,23 @@ onmouseup='test-event-onmouseup'>", datetimelocalInput.GetHtml());
 TEST_F(Test_vihtmlinput, Test_HiddenInput_GetHtml) {
   Input hiddenInput{Input::InputTypes::hidden};
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::sizeofenum); i++) {
     Input::StringAttributes attr = static_cast<Input::StringAttributes>(i);
     std::string attrValue = "test-" + Input::EnumToStr(attr);
     hiddenInput.SetAttribute<const std::string&>(Input::EnumToStr(attr), attrValue);
   }
   
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::sizeofenum); i++) {
     Input::NumericAttributes attr = static_cast<Input::NumericAttributes>(i);
     hiddenInput.SetAttribute(attr, i);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::sizeofenum); i++) {
     Input::BooleanAttributes attr = static_cast<Input::BooleanAttributes>(i);
     hiddenInput.SetAttribute(Input::EnumToStr(attr).c_str(), true);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::sizeofenum); i++) {
     Input::EventAttributes attr = static_cast<Input::EventAttributes>(i);
     std::string attrValue = "test-event-" + Input::EnumToStr(attr);
     hiddenInput.SetAttribute(attr, attrValue);
@@ -606,23 +606,23 @@ style='test-style' title='test-title'>", hiddenInput.GetHtml());
 TEST_F(Test_vihtmlinput, Test_ButtonInput_GetHtml) {
   Input buttonInput{Input::InputTypes::button};
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::StringAttributes::sizeofenum); i++) {
     Input::StringAttributes attr = static_cast<Input::StringAttributes>(i);
     std::string attrValue = "test-" + Input::EnumToStr(attr);
     buttonInput.SetAttribute(attr, attrValue);
   }
   
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::NumericAttributes::sizeofenum); i++) {
     Input::NumericAttributes attr = static_cast<Input::NumericAttributes>(i);
     buttonInput.SetAttribute(attr, i);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::BooleanAttributes::sizeofenum); i++) {
     Input::BooleanAttributes attr = static_cast<Input::BooleanAttributes>(i);
     buttonInput.SetAttribute(Input::EnumToStr(attr).c_str(), true);
   }
 
-  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::SizeOfEnum); i++) {
+  for(int32_t i = 1; i < static_cast<int32_t>(Input::EventAttributes::sizeofenum); i++) {
     Input::EventAttributes attr = static_cast<Input::EventAttributes>(i);
     std::string attrValue = "test-event-" + Input::EnumToStr(attr);
     buttonInput.SetAttribute<const std::string&>(Input::EnumToStr(attr), attrValue);

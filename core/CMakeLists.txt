@@ -12,6 +12,9 @@ target_sources(viwebserver PUBLIC
   ${CMAKE_CURRENT_LIST_DIR}/src/vihtmlformatter.cpp
   ${CMAKE_CURRENT_LIST_DIR}/src/vihtmllabel.cpp
   ${CMAKE_CURRENT_LIST_DIR}/src/vihtmlinput.cpp
+  ${CMAKE_CURRENT_LIST_DIR}/src/vihtmllink.cpp
+  ${CMAKE_CURRENT_LIST_DIR}/src/vihtmlmeta.cpp
+  ${CMAKE_CURRENT_LIST_DIR}/src/vihtmlhead.cpp
 )
 target_include_directories(viwebserver INTERFACE ${CMAKE_CURRENT_LIST_DIR}/src/inc)
 
